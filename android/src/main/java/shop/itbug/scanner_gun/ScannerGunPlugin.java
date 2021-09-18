@@ -298,7 +298,7 @@ public class ScannerGunPlugin implements FlutterPlugin, MethodCallHandler, Activ
                     char c = (char) buffer[i];
                     stringBuffer.append(c);
                 }
-                final String scanData = stringBuffer.toString().replaceAll(" ", "");
+                String scanData = stringBuffer.toString();
                 sendScanCodeToFlutterApp("code", scanData);
                 break;
             case BtBase.Listener.CONNECTERROR:

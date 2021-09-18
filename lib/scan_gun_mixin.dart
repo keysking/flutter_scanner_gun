@@ -7,8 +7,7 @@ import 'package:scanner_gun/models/bt_device_model.dart';
 import 'package:scanner_gun/scanner_gun.dart';
 
 mixin ScanGunMixin<T extends StatefulWidget> on State<T> {
-  static const EventChannel _eventChannel =
-      const EventChannel('itbug/shop/scangun');
+  static const EventChannel _eventChannel = const EventChannel('itbug/shop/scangun');
   late StreamSubscription _streamSubscription;
 
   List<BtDeviceModel> blueDevices = []; // 设备列表
@@ -17,9 +16,7 @@ mixin ScanGunMixin<T extends StatefulWidget> on State<T> {
   @override
   void initState() {
     super.initState();
-    _streamSubscription = _eventChannel
-        .receiveBroadcastStream()
-        .listen(_onEvent, onError: _onError);
+    _streamSubscription = _eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
   }
 
   void _onEvent(Object? event) {
